@@ -1,0 +1,5 @@
+.nav-button.active-scroll {
+  border-bottom: 2px solid #ff9800; /* Use your theme's secondary/main color */
+  font-weight: bold;
+  transition: 0.3s;
+}

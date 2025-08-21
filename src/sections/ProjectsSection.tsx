@@ -24,7 +24,7 @@ const projects = [
   {
     title: 'Portfolio Website',
     description: 'My own portfolio with animations, responsiveness, and clean UI.',
-    image: './project1.png',
+    image: './project2.png',
     tech: ['React', 'Framer Motion', 'Vite'],
     liveLink: 'https://your-portfolio.com',
     repoLink: 'https://github.com/yourusername/portfolio',
