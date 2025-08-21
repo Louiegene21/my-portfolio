@@ -1,18 +1,15 @@
-import { Button, Container, Typography } from '@mui/material';
-import { useToggleTheme } from './theme/ThemeProvider';
+// src/App.tsx
+import { Typography } from '@mui/material';
+import Layout from './components/Layout';
 
 function App() {
-  const toggleTheme = useToggleTheme();
-
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Hello, Portfolio!
+    <Layout>
+      <Typography variant="h3" align="center" gutterBottom>
+        Welcome to My Portfolio
       </Typography>
-      <Button variant="contained" onClick={toggleTheme}>
-        Toggle Theme
-      </Button>
-    </Container>
+      <Typography align="center">Let’s build something great together!</Typography>
+    </Layout>
   );
 }
 

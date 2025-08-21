@@ -1,12 +1,9 @@
-import { useMemo, useState, createContext, useContext } from 'react';
+import { useMemo, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
 import { lightTheme, darkTheme } from './theme';
+import ThemeToggleContext from './useToggleTheme';
 
 type ThemeMode = 'light' | 'dark';
-
-const ThemeToggleContext = createContext(() => {});
-
-export const useToggleTheme = () => useContext(ThemeToggleContext);
 
 export default function ThemeProviderWrapper({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState<ThemeMode>('light');
