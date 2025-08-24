@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useToggleTheme } from '../theme/useToggleTheme';
 import { Link as ScrollLink } from 'react-scroll';
 
+
 export default function Navbar() {
   const toggleTheme = useToggleTheme();
   const theme = useTheme();

@@ -11,6 +11,7 @@ import {
   Stack,
 } from '@mui/material';
 import { motion } from 'framer-motion';
+import { fadeInUp } from '../utils/motionVariants';
 
 const projects = [
   {
@@ -43,11 +44,12 @@ export default function ProjectsSection() {
         {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
               whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }} // Optional: delay based on index
             >
               <Card
                 sx={{
@@ -77,10 +79,20 @@ export default function ProjectsSection() {
                   </Stack>
                 </CardContent>
                 <CardActions sx={{ mt: 'auto' }}>
-                  <Button size="small" href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="small"
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Live
                   </Button>
-                  <Button size="small" href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="small"
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Code
                   </Button>
                 </CardActions>
