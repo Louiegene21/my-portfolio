@@ -11,7 +11,7 @@ import {
   Stack,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import { fadeInUp } from '../utils/motionVariants';
+import { fadeInUp, staggerContainer } from '../utils/motionVariants';
 
 const projects = [
   {
@@ -40,67 +40,70 @@ export default function ProjectsSection() {
         Projects
       </Typography>
 
-      <Grid container spacing={4} sx={{ mt: 2 }}>
-        {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <motion.div
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              whileHover={{ scale: 1.03 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }} // Optional: delay based on index
-            >
-              <Card
-                sx={{
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  cursor: 'pointer',
-                  boxShadow: 3,
-                  transition: '0.3s',
-                }}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <Grid container spacing={4} sx={{ mt: 2 }}>
+          {projects.map((project, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.03 }}
               >
-                <CardMedia
-                  component="img"
-                  height="160"
-                  image={project.image}
-                  alt={project.title}
-                />
-                <CardContent>
-                  <Typography variant="h6">{project.title}</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ my: 1 }}>
-                    {project.description}
-                  </Typography>
-                  <Stack direction="row" spacing={1} flexWrap="wrap">
-                    {project.tech.map((tech) => (
-                      <Chip key={tech} label={tech} size="small" />
-                    ))}
-                  </Stack>
-                </CardContent>
-                <CardActions sx={{ mt: 'auto' }}>
-                  <Button
-                    size="small"
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live
-                  </Button>
-                  <Button
-                    size="small"
-                    href={project.repoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Code
-                  </Button>
-                </CardActions>
-              </Card>
-            </motion.div>
-          </Grid>
-        ))}
-      </Grid>
+                <Card
+                  sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    cursor: 'pointer',
+                    boxShadow: 3,
+                    transition: '0.3s',
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    height="160"
+                    image={project.image}
+                    alt={project.title}
+                  />
+                  <CardContent>
+                    <Typography variant="h6">{project.title}</Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ my: 1 }}>
+                      {project.description}
+                    </Typography>
+                    <Stack direction="row" spacing={1} flexWrap="wrap">
+                      {project.tech.map((tech) => (
+                        <Chip key={tech} label={tech} size="small" />
+                      ))}
+                    </Stack>
+                  </CardContent>
+                  <CardActions sx={{ mt: 'auto' }}>
+                    <Button
+                      size="small"
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live
+                    </Button>
+                    <Button
+                      size="small"
+                      href={project.repoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Code
+                    </Button>
+                  </CardActions>
+                </Card>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </motion.div>
     </Box>
   );
 }
