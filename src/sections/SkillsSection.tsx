@@ -43,7 +43,7 @@ export default function SkillsSection() {
       id="skills"
       sx={{
         py: 8,
-        backgroundColor: theme.palette.mode === 'light' ? '#fafafa' : '#1e1e1e',
+        background: 'linear-gradient(to bottom right, #f0f4ff, #ffffff)',
       }}
     >
       <Typography variant="h4" align="center" gutterBottom>
