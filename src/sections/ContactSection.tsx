@@ -4,10 +4,10 @@ import {
   Grid,
   Stack,
   TextField,
-  Typography,
   IconButton,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import SectionHeader from "../components/SectionHeader";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -67,16 +67,14 @@ export default function ContactSection() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <Typography variant="h4" align="center" gutterBottom>
-          Contact Me
-        </Typography>
 
-        <Typography align="center" sx={{ mb: 4 }}>
-          Let’s connect! Whether you have a question or just want to say hi.
-        </Typography>
+              <SectionHeader
+                title="Contact Me"
+                subtitle="Let’s connect! Whether you have a question or just want to say hi."
+              />
 
         <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} md={6}>
+          <Grid >
             <form onSubmit={handleSubmit} noValidate>
               <Stack spacing={2}>
                 <TextField

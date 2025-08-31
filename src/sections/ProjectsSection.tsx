@@ -9,26 +9,29 @@ import {
   Button,
   Chip,
   Stack,
-} from '@mui/material';
-import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '../utils/motionVariants';
+} from "@mui/material";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "../utils/motionVariants";
+import SectionHeader from "../components/SectionHeader";
 
 const projects = [
   {
-    title: 'Church Website',
-    description: 'A full-featured church site built with React, MUI, and TypeScript.',
-    image: './project1.png',
-    tech: ['React', 'TypeScript', 'Material UI'],
-    liveLink: 'https://your-church-site.com',
-    repoLink: 'https://github.com/yourusername/church-website',
+    title: "Church Website",
+    description:
+      "A full-featured church site built with React, MUI, and TypeScript.",
+    image: "./project1.png",
+    tech: ["React", "TypeScript", "Material UI"],
+    liveLink: "https://your-church-site.com",
+    repoLink: "https://github.com/yourusername/church-website",
   },
   {
-    title: 'Portfolio Website',
-    description: 'My own portfolio with animations, responsiveness, and clean UI.',
-    image: './project2.png',
-    tech: ['React', 'Framer Motion', 'Vite'],
-    liveLink: 'https://your-portfolio.com',
-    repoLink: 'https://github.com/yourusername/portfolio',
+    title: "Portfolio Website",
+    description:
+      "My own portfolio with animations, responsiveness, and clean UI.",
+    image: "./project2.png",
+    tech: ["React", "Framer Motion", "Vite"],
+    liveLink: "https://your-portfolio.com",
+    repoLink: "https://github.com/yourusername/portfolio",
   },
   // Add more projects as needed
 ];
@@ -36,9 +39,10 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <Box component="section" id="projects" sx={{ py: 8 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Projects
-      </Typography>
+      <SectionHeader
+        title="Projects"
+        subtitle="Explore a few of the React-based projects I've built recently."
+      />
 
       <motion.div
         variants={staggerContainer}
@@ -48,19 +52,16 @@ export default function ProjectsSection() {
       >
         <Grid container spacing={4} sx={{ mt: 2 }}>
           {projects.map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ scale: 1.03 }}
-              >
+            <Grid key={index}>
+              <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }}>
                 <Card
                   sx={{
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    cursor: 'pointer',
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    cursor: "pointer",
                     boxShadow: 3,
-                    transition: '0.3s',
+                    transition: "0.3s",
                   }}
                 >
                   <CardMedia
@@ -71,7 +72,11 @@ export default function ProjectsSection() {
                   />
                   <CardContent>
                     <Typography variant="h6">{project.title}</Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ my: 1 }}>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ my: 1 }}
+                    >
                       {project.description}
                     </Typography>
                     <Stack direction="row" spacing={1} flexWrap="wrap">
@@ -80,7 +85,7 @@ export default function ProjectsSection() {
                       ))}
                     </Stack>
                   </CardContent>
-                  <CardActions sx={{ mt: 'auto' }}>
+                  <CardActions sx={{ mt: "auto" }}>
                     <Button
                       size="small"
                       href={project.liveLink}

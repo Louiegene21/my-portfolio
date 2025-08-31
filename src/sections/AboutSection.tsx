@@ -25,7 +25,7 @@ export default function AboutSection() {
     >
       <Grid container spacing={4} alignItems="center">
         {/* Profile Image */}
-        <Grid item xs={12} md={4}>
+        <Grid >
           <Box display="flex" justifyContent="center">
             <Avatar
               src="./profile.jpg" // Replace with your own photo if desired
@@ -36,8 +36,9 @@ export default function AboutSection() {
         </Grid>
 
         {/* Text + Skills */}
-        <Grid item xs={12} md={8}>
+        <Grid >
           <Stack spacing={3}>
+            
             <Typography variant="h4" component="h2">
               Hello! I’m Louie Gene Siscar
             </Typography>

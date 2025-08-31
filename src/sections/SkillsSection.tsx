@@ -6,6 +6,7 @@ import {
   Paper,
   useTheme,
 } from '@mui/material';
+import SectionHeader from '../components/SectionHeader';
 import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
 import AnimationIcon from '@mui/icons-material/Animation';
@@ -46,13 +47,13 @@ export default function SkillsSection() {
         background: 'linear-gradient(to bottom right, #f0f4ff, #ffffff)',
       }}
     >
-      <Typography variant="h4" align="center" gutterBottom>
-        Skills
-      </Typography>
+      <SectionHeader
+        title="Skills"
+      />
 
       <Grid container spacing={4} justifyContent="center" sx={{ mt: 2 }}>
         {skills.map((category) => (
-          <Grid item xs={12} sm={6} md={4} key={category.title}>
+          <Grid key={category.title}>
             <Paper
               elevation={3}
               sx={{
